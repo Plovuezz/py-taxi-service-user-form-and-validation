@@ -3,12 +3,12 @@
 {% block content %}
   <h1>
     {{ driver.first_name }} {{ driver.last_name }}
-    <a href="{% url 'taxi:driver-update' driver.id %}"><i class="bi bi-pencil-square"></i></a>
+    <a href="{% url 'taxi:driver-update' driver.pk %}"><i class="bi bi-pencil-square"></i></a>
     <a href="{% url 'taxi:driver-delete' driver.id %}"><i class="bi bi-trash-fill"></i></a>
   </h1>
   <ul>
     <li><i class="bi bi-globe"></i> {{ driver.username }}</li>
-    <li><i class="bi bi-tools"></i> {{ driver.license_number }} |  <a href="{% url 'taxi:license-update' driver.pk %}">Update license</a></li>
+    <li><i class="bi bi-tools"></i> {{ driver.license_number }}</li>
   </ul>
   <h3>Drives this cars</h3>
   <hr>

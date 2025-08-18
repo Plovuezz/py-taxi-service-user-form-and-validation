@@ -45,9 +45,6 @@ class DriverViewsTest(TestCase):
             reverse("taxi:driver-update", kwargs={"pk": self.user.id}),
             data={
                 "license_number": test_license_number,
-                "username": self.user.username,
-                "password1": "1qazcde3",
-                "password2": "1qazcde3"
             },
         )
         self.assertEqual(response.status_code, 302)

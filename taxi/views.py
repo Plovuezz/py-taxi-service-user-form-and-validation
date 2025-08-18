@@ -92,17 +92,12 @@ class DriverDetailView(LoginRequiredMixin, generic.DetailView):
 
 class DriverUpdateView(LoginRequiredMixin, generic.UpdateView):
     model = Driver
-    form_class = DriverCreationForm
+    form_class = DriverLicenseUpdateForm
 
 
 class DriverCreateView(LoginRequiredMixin, generic.CreateView):
     model = Driver
     form_class = DriverCreationForm
-
-
-class DriverLicenseUpdate(LoginRequiredMixin, generic.UpdateView):
-    model = Driver
-    form_class = DriverLicenseUpdateForm
 
 
 class DriverDeleteView(LoginRequiredMixin, generic.DeleteView):

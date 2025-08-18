@@ -7,7 +7,7 @@ from taxi.views import (
     CarListView, CarDetailView, CarCreateView,
     CarUpdateView, CarDeleteView,
     DriverListView, DriverDetailView, DriverCreateView,
-    DriverUpdateView, DriverLicenseUpdate, DriverDeleteView,
+    DriverUpdateView, DriverDeleteView,
     assign_to_car, delete_from_car,
 )
 
@@ -43,16 +43,11 @@ urlpatterns = [
     path(
         "drivers/<int:pk>/", DriverDetailView.as_view(), name="driver-detail"
     ),
-    path("drivers/create", DriverCreateView.as_view(), name="driver-create"),
+    path("drivers/create/", DriverCreateView.as_view(), name="driver-create"),
     path(
         "drivers/<int:pk>/update/",
         DriverUpdateView.as_view(),
         name="driver-update"
-    ),
-    path(
-        "drivers/<int:pk>/license_update/",
-        DriverLicenseUpdate.as_view(),
-        name="license-update"
     ),
     path(
         "drivers/<int:pk>/delete/",
